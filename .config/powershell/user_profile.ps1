@@ -3,8 +3,6 @@
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 # Alias
-Set-Alias vim nvim
-Set-Alias v vim
 Set-Alias ll ls
 
 # Utilities
