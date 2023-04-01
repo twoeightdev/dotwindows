@@ -1,0 +1,34 @@
+[
+    {
+        "comment": "Navigate directory up",
+        "key": "k",
+        "command": ["script-binding", "file_browser/dynamic/scroll_up"],
+        "flags": {
+            "repeatable": true
+        }
+    },
+    {
+        "comment": "Navigate directory down",
+        "key": "j",
+        "command": ["script-binding", "file_browser/dynamic/scroll_down"],
+        "flags": {
+            "repeatable": true
+        }
+    },
+    {
+        "comment": "Navigate directory left",
+        "key": "h",
+        "command": ["script-binding", "file_browser/dynamic/up_dir"],
+        "flags": {
+            "repeatable": true
+        }
+    },
+    {
+        "comment": "Navigate directory right",
+        "key": "l",
+        "command": ["script-binding", "file_browser/dynamic/down_dir"],
+        "flags": {
+            "repeatable": true
+        }
+    }
+]

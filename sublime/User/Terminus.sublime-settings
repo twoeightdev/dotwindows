@@ -1,0 +1,19 @@
+{
+    "shell_configs": [
+        {
+            "name": "PowerShell",
+            "cmd": "powershell.exe",
+            "env": {},
+            "enable": true,
+            "default": true,
+            "platforms": [
+                "windows"
+            ]
+        }
+    ],
+    "theme": "monokai-soda",
+    "view_settings": {
+        "font_face": "SF Mono",
+        "font_size": 12
+    }
+}

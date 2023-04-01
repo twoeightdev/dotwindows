@@ -1,0 +1,17 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+    "variables":
+    {
+    },
+    "globals":
+    {
+    },
+    "rules":
+    [
+        {
+            "Name": "Punctuation hard line break in Markdown",
+            "scope": "meta.paragraph.markdown meta.dummy.line-break, meta.paragraph.markdown meta.hard-line-break.markdown",
+            "background": "#1d2021"
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+#+title: Windows 10 Tweaks
+#+author: hoaxdream
+#+date: [2021-12-15 Wed]
+
+[[https://img.shields.io/github/commit-activity/m/hoaxdream/dotwin.svg?style=social]]
+[[https://img.shields.io/github/followers/hoaxdream.svg?style=social]]
+[[https://img.shields.io/github/stars/hoaxdream.svg?style=social]]
+
+* Table of Contents                                                  :Toc:Quote:
+:PROPERTIES:
+:Visibility: all
+:END:
+
+#+BEGIN_QUOTE
+- [[#about][About]]
+- [[#-swap-capslock-to-escape][⌨ Swap capslock to escape]]
+- [[#-smartscreen][💡 SmartScreen]]
+- [[#-windowshake][🤝 WindowShake]]
+- [[#-delete-gitbash-context][🔑 Delete Gitbash context]]
+- [[#-control-panel-context][🗝 Control panel context]]
+- [[#-quick-access][💣 Quick access]]
+- [[#-disable-folders][📂 Disable folders]]
+- [[#-7zip-context-menu][💼 7zip context menu]]
+- [[#-ssh][🖥 SSH]]
+#+END_QUOTE
+
+* About
+Essential tweaks that i use for windows 10.
+
+* ⌨ Swap capslock to escape
+Navigate =HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout=
+Inside =Keyboard Layout=, create *Binary* value =Scancode Map=.
+
+| *Name-Value*   | *Data-Value*              |
+|--------------+-------------------------|
+| Scancode Map | 00 00 00 00 00 00 00 00 |
+|              | 02 00 00 00 01 00 3A 00 |
+|              | 00 00 00 00             |
+
+* 💡 SmartScreen
+Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System=
+Inside =System=, create *DWORD 32-bit* value with =0= value to disable *SmartScreen*.
+
+| *Name-Value*        | *Data-Value* |
+|-------------------+------------|
+| EnableSmartScreen | 0          |
+
+* 🤝 WindowShake
+Navigate =HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced=
+Inside =Advanced=, create *DWORD 32-bit* value with =1= value to disable *WindowShake*.
+
+| *Name-Value*      | *Data-Value* |
+|-----------------+------------|
+| DisallowShaking | 1          |
+
+* 🔑 Delete Gitbash context
+Delete the following registry to remove *Gitbash* in context menu.
+
+#+begin_src shell
+HKEY_CLASSES_ROOT\Directory\shell\git_gui
+HKEY_CLASSES_ROOT\Directory\shell\git_shell
+HKEY_CLASSES_ROOT\LibraryFolder\background\shell\git_gui
+HKEY_CLASSES_ROOT\LibraryFolder\background\shell\git_shell
+HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\git_gui
+HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\git_shell
+#+end_src
+
+* 🗝 Control panel context
+Add *Control Panel* in context menu.
+Navigate =HKEY_CLASSES_ROOT\DesktopBackground\Shell=
+Under =Shell=, create sub *Key* and name it =Control Panel=.
+Inside *Control Panel*, create three =String= value.
+
+| *Name-Value*  | *Data-Value*                       |
+|-------------+----------------------------------|
+| MUIVerb     | Control Panel                    |
+| SubCommands | CP-Category;CP-Icons;CP-AllTasks |
+| Icon        | imageres.dll,-27                 |
+
+Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell=
+Under =shell=, create three sub *Key* and change the default *String* value of each *Key*.
+
+| *Key-Value*   | *Data-Value*    |
+|-------------+---------------|
+| CP-Icons    | Icons View    |
+| CP-Category | Category View |
+| CP-AllTasks | All Tasks     |
+
+Add new *String* value to each of that three sub *Key*.
+
+| *Name-Value* | *Data-Value*       |
+|------------+------------------|
+| Icon       | imageres.dll,-27 |
+
+Create a sub *Key* to each of the three *Key* above and change all their default
+*String* value.
+
+| *Key-Value*   | *Sub Key* | *Data-Value*                                                  |
+|-------------+---------+-------------------------------------------------------------|
+| CP-Icons    | command | explorer.exe shell:::{21EC2020-3AEA-1069-A2DD-08002B30309D} |
+| CP-Category | command | explorer.exe shell:::{26EE0668-A00A-44D7-9371-BEB064C98683} |
+| CP-AllTasks | command | explorer.exe shell:::{ED7BA470-8E54-465E-825C-99712043E01C} |
+
+* 💣 Quick access
+Disable window explorer sidebar *quick-access*.
+Open *regedit*.
+Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer=
+Inside =Explorer=, create *DWORD 32-bit* value with =1= value to hide *quick-access*.
+
+| *Name-Value* | *Data-Value* |
+|------------+------------|
+| HubMode    | 1          |
+
+* 📂 Disable folders
+Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{UNIQUE_ID}\PropertyBag=
+*UNIQUE_ID* equivalent of each folder below.
+
+Create =PropertyBag= *Key* or =ThisPCPolicy= *String* if it's missing.
+
+#+begin_src shell
+# Documents
+{f42ee2d3-909f-4907-8871-4c22fc0bf756}
+# Pictures
+{0ddd015d-b06c-45d5-8c4c-f59713854639}
+# Videos
+{35286a68-3c57-41a1-bbb1-0eae73d76c95}
+# Downloads
+{7d83ee9b-2244-4e70-b1f5-5393042af1e4}
+# Music
+{a0c69a99-21c8-4671-8703-7934162fcf1d}
+# Desktop
+{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}
+# 3D Objects
+{31C0DD25-9439-4F12-BF41-7FF4EDA38722}
+#+end_src
+
+* 💼 7zip context menu
+*Scoop* 7zip context menu is disabled by default, to enable do the following:
+- Run =7zFM= as *administrator*
+- Go to =Tools > Options > 7-Zip=
+- Check =Integrate 7-zip into shell context menu=
+- Restart PC
+
+* 🖥 SSH
+Enable SSH
+- Go to =Manage optional features and add feature=
+- Install =OpenSSH Server= then restart pc
+- Go to *Services* and search for =OpenSSH SSH Server=
+- Click properties and set startup type to *automatic*
+- Go to =Firewall & network protection= then *advanced settings*
+- Create new =Inbound Rule=
+- On the next page, select =Port=, then select *Specific local port* and set it to *22*
+- Hit next up to the end then name it =SSH= or whatever you want to name it.
+- Reboot and done.

@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"ChangeQuotes",
+		"FileIcons",
+		"GitGutter",
+		"LiveReload",
+		"LSP",
+		"LSP-json",
+		"LSP-pyright",
+		"LuaFormat",
+		"MarkdownEditing",
+		"MarkdownPreview",
+		"MarkdownTOC",
+		"Package Control",
+		"python-black",
+		"Terminus",
+		"Theme - Monokai Pro",
+	],
+	"in_process_packages":
+	[
+	],
+}

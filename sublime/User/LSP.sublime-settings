@@ -1,0 +1,35 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+    "clients": {
+        "wow lua-ls": {
+            "command": [
+                "C:\\Users\\hoaxdream\\AppData\\Roaming\\Sublime Text\\Packages\\LuaLSP\\server\\bin\\Windows\\lua-language-server",
+                "-E",
+                "C:\\Users\\hoaxdream\\AppData\\Roaming\\Sublime Text\\Packages\\LuaLSP\\server\\main.lua"
+            ],
+            "enabled": true,
+            "selector": "source.lua",
+            "settings": {
+                "Lua": {
+                    "completion": {
+                        "enabled": false
+                    },
+                    "diagnostics": {
+                        "enabled": false
+                    },
+                    "runtime": {
+                        "version": "WoW Lua 5.1"
+                    },
+                    "workspace": {
+                        "ignoreDir": [
+                            ".git",
+                            ".vscode"
+                        ],
+                        "maxPreload": 2000,
+                        "preloadFileSize": 1000
+                    }
+                }
+            }
+        }
+    }
+}

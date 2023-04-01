@@ -1,0 +1,7 @@
+// OrgExtended Settings - User
+{
+	// Light color scheme
+	//"color_scheme": "Packages/OrgExtended/OrgExtended-Light.sublime-color-scheme",
+	"tab_size": 2,
+	"color_scheme": "Packages/User/OrgColorSchemes/Monokai Pro (Filter Spectrum).sublime-color-scheme"
+}

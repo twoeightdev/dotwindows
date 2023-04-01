@@ -1,0 +1,8 @@
+{
+    "defaults": {
+        "autolink": true,
+        "bracket": "round",
+        "markdown_preview": "markdown",
+        "lowercase": "only_ascii"
+    }
+}

@@ -1,0 +1,17 @@
+// These settings override both User and Default settings for the Python syntax
+{
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "spell_check": false,
+    "rulers": [
+        72, 79
+    ],
+    "trim_trailing_white_space_on_save": "all",
+    "indent_guide_options": [
+        "draw_active",
+        "draw_normal"
+    ],
+    "ensure_newline_at_eof_on_save": true,
+    "font_face": "Iosevka",
+    "font_size": 14
+}

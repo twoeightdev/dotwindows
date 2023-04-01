@@ -1,0 +1,80 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+    "variables":
+    {
+    },
+    "rules":
+    [
+        {
+            // Command pallet font resize
+            "class": "quick_panel_label",
+            "font.face": "SF Mono",
+            "font.size": 20
+        },
+        {
+            // Sidebar heading
+            "class": "sidebar_heading",
+            "font.face": "SF Mono",
+            "font.size": 18
+        },
+        {
+            // Sidebar subfolder font size
+            "class": "sidebar_label",
+            "font.face": "SF Mono",
+            "font.size": 17
+        },
+        {
+            // Tabs
+            "class": "tab_label",
+            "font.face": "SF Mono",
+            "font.size": 14
+        },
+        {
+            // Statusbar margin
+            "class": "status_bar",
+            "layer0.tint": [
+                46, 46, 46
+            ],
+            "layer0.opacity": 0.5,
+            "content_margnin": [
+                8, 4, 8, 6
+            ]
+        },
+        {
+            // Statusbar
+            "class": "label_control",
+            "fg": [
+                180, 210, 155
+            ],
+            "font.face": "SF Mono",
+            "font.size": 18
+        },
+        {
+            // Statusbar button text "normal"
+            "class": "label_control",
+            "parents": [
+                {
+                    "class": "status_button"
+                }
+            ],
+            "fg": [
+                121, 121, 121
+            ]
+        },
+        {
+            // Statusbar button text "hover"
+            "class": "label_control",
+            "parents": [
+                {
+                    "class": "status_button",
+                    "attributes": [
+                        "hover"
+                    ]
+                }
+            ],
+            "fg": [
+                180, 210, 155
+            ]
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+#+TITLE: Windows 10 Configuration
+#+AUTHOR: hoaxdream
+#+DATE: [2021-12-15 Wed]
+
+[[https://img.shields.io/github/commit-activity/m/hoaxdream/dotwin.svg?style=social]]
+[[https://img.shields.io/github/followers/hoaxdream.svg?style=social]]
+[[https://img.shields.io/github/stars/hoaxdream.svg?style=social]]
+
+* Table of Contents                                                  :Toc:Quote:
+:PROPERTIES:
+:Visiblity: all
+:END:
+
+#+BEGIN_QUOTE
+- [[#about][About]]
+- [[#package-git-repository-and-scripts][:package: Git repository and scripts]]
+- [[#link-source-file][:link: Source file]]
+- [[#clapper-mpv-configuration][:clapper: Mpv configuration]]
+#+END_QUOTE
+
+* About
+Essential windows 10 configuration and
+[[https://github.com/hoaxdream/dotwin/blob/main/tweaks.org][tweaks]]
+
+* :package: Git repository and scripts
+First we need to disable winget =telemetry=. Open *Powershell* as /administrator/
+then type =winget-settings= to open winget configuration and add the following.
+
+#+begin_src js
+{
+    "telemetry": {
+        "disable": true
+    }
+}
+#+end_src
+
+Run *Windows Powershell* as /administrator/ and temporarily unblock running
+scripts.
+
+#+begin_src powershell
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
+#+end_src
+
+Then install *Git* and copy =.gitconfig= to =C:\Users\hoaxdream\=.
+
+#+begin_src powershell
+winget install -e --id Git.Git
+#+end_src
+
+Now we need to clone the repository and run the script.
+
+#+begin_src powershell
+cd C:\Users\hoaxdream\Desktop
+git clone https://github.com/hoaxdream/pwsh-dots.git
+#+end_src
+
+Edit =wingetpkg.ps1= powershell script to include packages you want to install,
+then run the script.
+
+#+begin_src powershell
+./wingetpkg.ps1
+#+end_src
+
+Some packages are not available with winget, so we're going to use
+=scoop= /a command-line installer for windows/ to install them.
+
+Run powershell as normal user and edit =scooppkg.ps1= powershell script
+to include the packages you want to install, then run the script.
+
+#+begin_src powershell
+./scooppkg.ps1
+#+end_src
+
+* :link: Source file
+Close powershell then open *Windows Terminal*. Set profile to powershell if
+it's not set as default, then save.
+
+Create directory that we need for setting up powershell
+
+#+begin_src powershell
+mkdir .config/powershell
+mkdir C:\Users\hoaxdream\Documents\powershell
+#+end_src
+
+Copy =user-profile.ps1= to =C:\Users\hoaxdream\.config\powershell\= then
+restart the terminal and add user host.
+
+#+begin_src powershell
+notepad $PROFILE.CurrentUserCurrentHost
+. $env:USERPROFILE\.config\powershell\user_profile.ps1
+#+end_src
+
+* :clapper: Mpv configuration
+I use mpv player as my main video and music player.
+Copy everything inside =portable_config= to
+=C:\Users\hoaxdream\scoop\apps\mpv-git\current\portable_config=.

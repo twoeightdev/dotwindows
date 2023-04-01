@@ -1,0 +1,8 @@
+{
+    "font_face": "IBM Plex Mono",
+    "font_size": 14,
+    "margin": 10,
+    "save_on_focus_lost": true,
+    "translate_tabs_to_spaces": true,
+    "trim_automatic_white_space": false
+}

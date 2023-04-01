@@ -1,0 +1,6 @@
+{
+    "port": 35730,
+    "enabled_plugins": [
+        "SimpleReloadPluginDelay"
+    ]
+}

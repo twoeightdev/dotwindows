@@ -1,0 +1,70 @@
+[
+    {
+        // Better font resize
+        "keys": [
+            "ctr+0"
+        ],
+        "command": "global_set_setting",
+        "args": {
+            "setting": "font_size",
+            "value": 13
+        }
+    },
+    {
+        // Reset to stock font size
+        "keys": [
+            "ctrl+9"
+        ],
+        "command": "reset_font_size"
+    },
+    {
+        // Toggle sidebar
+        "keys": [
+            "ctrl+tab"
+        ],
+        "command": "toggle_side_bar"
+    },
+    {
+        // Open terminus powershell current directory
+        "keys": [
+            "alt+`"
+        ],
+        "command": "toggle_terminus_panel",
+        "args": {
+            "cwd": "${file_path:${folder}}"
+        }
+    },
+    {
+        // Open terminus powershell in new tab
+        "keys": [
+            "alt+shift+`"
+        ],
+        "command": "terminus_open"
+    },
+    {
+        // Close terminus
+        "keys": [
+            "ctrl+w"
+        ],
+        "command": "terminus_close",
+        "context": [
+            {
+                "key": "terminus_view"
+            }
+        ]
+    },
+    {
+        // ChangeQuotes
+        "keys": [
+            "ctrl+shift+'"
+        ],
+        "command": "change_quotes"
+    },
+    {
+        // FormaLUA
+        "keys": [
+            "alt+l"
+        ],
+        "command": "format_lua"
+    }
+]

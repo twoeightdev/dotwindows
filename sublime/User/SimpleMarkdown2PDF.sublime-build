@@ -1,0 +1,4 @@
+{
+    "shell_cmd": "pandoc -o \"$file.pdf\" \"$file\" && start SumatraPDF \"$file.pdf\"",
+    "selector": "text.html.markdown",
+}

@@ -1,0 +1,37 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	// General Settings
+	"tab_size": 4,
+	"show_tab_close_buttons": false,
+	"highlight_modified_tabs": true,
+	"show_line_column": "compact",
+	"drag_text": false,
+	"translate_tabs_to_spaces": true,
+	"show_encoding": true,
+	"word_wrap": false,
+	"inactive_sheet_dimming": false,
+	"file_tab_style": "square",
+	"themed_title_bar": false,
+	"highlight_line": true,
+	//"save_on_focus_lost": true,
+	"hardware_acceleration": "opengl",
+
+	// Caret
+	"caret_extra_top": 0,
+	"caret_extra_bottom": 1,
+	"caret_extra_width": 1,
+
+	"color_scheme": "Monokai Pro (Filter Spectrum).sublime-color-scheme",
+	"theme": "Adaptive.sublime-theme",
+	// Font
+	"font_face": "IBM Plex Mono",
+	"font_options": [
+		//"no_italic",
+		"directwrite",
+		"subpixel_antialias"
+	],
+	"font_size": 14,
+}
