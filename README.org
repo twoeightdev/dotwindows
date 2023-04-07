@@ -1,10 +1,10 @@
 #+TITLE: Windows 10 Configuration
-#+AUTHOR: hoaxdream
+#+AUTHOR: artjeremie
 #+DATE: [2021-12-15 Wed]
 
-[[https://img.shields.io/github/commit-activity/m/hoaxdream/dotwin.svg?style=social]]
-[[https://img.shields.io/github/followers/hoaxdream.svg?style=social]]
-[[https://img.shields.io/github/stars/hoaxdream.svg?style=social]]
+[[https://img.shields.io/github/commit-activity/m/artjeremie/dotwin.svg?style=social]]
+[[https://img.shields.io/github/followers/artjeremie.svg?style=social]]
+[[https://img.shields.io/github/stars/artjeremie.svg?style=social]]
 
 * Table of Contents                                                  :Toc:Quote:
 :PROPERTIES:
@@ -20,7 +20,7 @@
 
 * About
 Essential windows 10 configuration and
-[[https://github.com/hoaxdream/dotwin/blob/main/tweaks.org][tweaks]]
+[[https://github.com/artjereie/dotwindows/blob/main/tweaks.org][tweaks]]
 
 * :package: Git repository and scripts
 First we need to disable winget =telemetry=. Open *Powershell* as /administrator/
@@ -41,7 +41,7 @@ scripts.
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
 #+end_src
 
-Then install *Git* and copy =.gitconfig= to =C:\Users\hoaxdream\=.
+Then install *Git* and copy =.gitconfig= to =C:\Users\artjeremie\=.
 
 #+begin_src powershell
 winget install -e --id Git.Git
@@ -50,8 +50,8 @@ winget install -e --id Git.Git
 Now we need to clone the repository and run the script.
 
 #+begin_src powershell
-cd C:\Users\hoaxdream\Desktop
-git clone https://github.com/hoaxdream/pwsh-dots.git
+cd C:\Users\artjeremie\Desktop
+git clone https://github.com/artjeremie/dotwindows.git
 #+end_src
 
 Edit =wingetpkg.ps1= powershell script to include packages you want to install,
@@ -79,10 +79,10 @@ Create directory that we need for setting up powershell
 
 #+begin_src powershell
 mkdir .config/powershell
-mkdir C:\Users\hoaxdream\Documents\powershell
+mkdir C:\Users\artjeremie\Documents\powershell
 #+end_src
 
-Copy =user-profile.ps1= to =C:\Users\hoaxdream\.config\powershell\= then
+Copy =user-profile.ps1= to =C:\Users\artjeremie\.config\powershell\= then
 restart the terminal and add user host.
 
 #+begin_src powershell
@@ -93,4 +93,4 @@ notepad $PROFILE.CurrentUserCurrentHost
 * :clapper: Mpv configuration
 I use mpv player as my main video and music player.
 Copy everything inside =portable_config= to
-=C:\Users\hoaxdream\scoop\apps\mpv-git\current\portable_config=.
+=C:\Users\artjeremie\scoop\apps\mpv-git\current\portable_config=.
