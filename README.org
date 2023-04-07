@@ -2,7 +2,7 @@
 #+AUTHOR: artjeremie
 #+DATE: [2021-12-15 Wed]
 
-[[https://img.shields.io/github/commit-activity/m/artjeremie/dotwin.svg?style=social]]
+[[https://img.shields.io/github/commit-activity/m/artjeremie/dotwindows.svg?style=social]]
 [[https://img.shields.io/github/followers/artjeremie.svg?style=social]]
 [[https://img.shields.io/github/stars/artjeremie.svg?style=social]]
 
