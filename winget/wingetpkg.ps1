@@ -16,7 +16,6 @@ $apps = @(
     @{name = "MiKTeX.MiKTeX" },
     @{name = "Bitwarden.Bitwarden" },
     @{name = "OBSProject.OBSStudio" },
-    @{name = "Flow-Launcher.Flow-Launcher" },
     @{name = "qBittorrent.qBittorrent" },
     @{name = "Telegram.TelegramDesktop" },
     @{name = "Dropbox.Dropbox" }
