@@ -11,6 +11,7 @@ $apps = @(
     @{name = "BurntSushi.ripgrep.GNU" },
     @{name = "yt-dlp.yt-dlp" },
     @{name = "ImageMagick.ImageMagick" },
+    @{name = "NickeManarin.ScreenToGif" },
     @{name = "OBSProject.OBSStudio" },
     @{name = "qBittorrent.qBittorrent" },
     @{name = "Telegram.TelegramDesktop" },
