@@ -2,9 +2,9 @@
 #+author: hoaxdream
 #+date: [2021-12-15 Wed]
 
-[[https://img.shields.io/github/commit-activity/m/hoaxdream/dotwin.svg?style=social]]
-[[https://img.shields.io/github/followers/hoaxdream.svg?style=social]]
-[[https://img.shields.io/github/stars/hoaxdream.svg?style=social]]
+[[https://img.shields.io/github/commit-activity/m/artjeremie/dotwin.svg?style=social]]
+[[https://img.shields.io/github/followers/artjeremie.svg?style=social]]
+[[https://img.shields.io/github/stars/artjeremie.svg?style=social]]
 
 * Table of Contents                                                  :Toc:Quote:
 :PROPERTIES:
