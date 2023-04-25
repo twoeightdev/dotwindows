@@ -20,7 +20,7 @@
 
 * About
 Essential windows 10 configuration and
-[[https://github.com/artjereie/dotwindows/blob/main/tweaks.org][tweaks]]
+[[https://github.com/artjeremie/dotwindows/blob/main/tweaks.org][tweaks]]
 
 * :package: Git repository and scripts
 First we need to disable winget =telemetry=. Open *Powershell* as /administrator/
