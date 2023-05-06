@@ -24,7 +24,7 @@ Essential windows 10 configuration and
 
 * :package: Git repository and scripts
 First we need to disable winget =telemetry=. Open *Powershell* as /administrator/
-then type =winget-settings= to open winget configuration and add the following.
+then type =winget settings= to open winget configuration and add the following.
 
 #+begin_src js
 {

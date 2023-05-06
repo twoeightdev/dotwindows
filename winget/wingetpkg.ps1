@@ -15,6 +15,7 @@ $apps = @(
     @{name = "OBSProject.OBSStudio" },
     @{name = "qBittorrent.qBittorrent" },
     @{name = "Telegram.TelegramDesktop" },
+    @{name = "Google.Chrome" },
     @{name = "Dropbox.Dropbox" }
 );
 Foreach ($app in $apps) {

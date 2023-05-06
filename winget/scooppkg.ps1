@@ -14,6 +14,5 @@ scoop install geekuninstaller
 scoop install lua
 scoop install curl
 scoop install ffmpeg-yt-dlp
-scoop install mplayer
 scoop install broot
 scoop install mpv-git
