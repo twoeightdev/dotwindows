@@ -1,30 +1,26 @@
-#+TITLE: Windows 10 Configuration
-#+AUTHOR: artjeremie
-#+DATE: [2021-12-15 Wed]
+#+title: Windows 10 Configuration
+#+author: artjeremie
+#+date: [2021-12-15 Wed]
 
 [[https://img.shields.io/github/commit-activity/m/artjeremie/dotwindows.svg?style=social]]
 [[https://img.shields.io/github/followers/artjeremie.svg?style=social]]
 [[https://img.shields.io/github/stars/artjeremie.svg?style=social]]
 
-* Table of Contents                                                  :Toc:Quote:
-:PROPERTIES:
-:Visiblity: all
-:END:
-
+* Table of Contents                                                              :Toc:Quote:
 #+BEGIN_QUOTE
 - [[#about][About]]
-- [[#package-git-repository-and-scripts][:package: Git repository and scripts]]
-- [[#link-source-file][:link: Source file]]
-- [[#clapper-mpv-configuration][:clapper: Mpv configuration]]
+- [[#-git-repository-and-scripts][📦 Git repository and scripts]]
+- [[#-source-file][🔗 Source file]]
+- [[#-mpv-configuration][🎬 Mpv configuration]]
 #+END_QUOTE
 
 * About
-Essential windows 10 configuration and
+Essential Windows 10 configuration and
 [[https://github.com/artjeremie/dotwindows/blob/main/tweaks.org][tweaks]]
 
-* :package: Git repository and scripts
-First we need to disable winget =telemetry=. Open *Powershell* as /administrator/
-then type =winget settings= to open winget configuration and add the following.
+* 📦 Git repository and scripts
+First we need to disable winget *telemetry*. Open =Powershell= as /administrator/ then
+type =winget settings= to open winget configuration and add the following.
 
 #+begin_src js
 {
@@ -34,14 +30,13 @@ then type =winget settings= to open winget configuration and add the following.
 }
 #+end_src
 
-Run *Windows Powershell* as /administrator/ and temporarily unblock running
-scripts.
+Run *Windows Powershell* as /administrator/ and temporarily unblock running scripts.
 
 #+begin_src powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
 #+end_src
 
-Then install *Git* and copy =.gitconfig= to =C:\Users\artjeremie\=.
+Then install *Git* and copy =.gitconfig= to =c:/Users/artjeremie/=.
 
 #+begin_src powershell
 winget install -e --id Git.Git
@@ -50,7 +45,7 @@ winget install -e --id Git.Git
 Now we need to clone the repository and run the script.
 
 #+begin_src powershell
-cd C:\Users\artjeremie\Desktop
+cd c:/Users/artjeremie/Desktop/
 git clone https://github.com/artjeremie/dotwindows.git
 #+end_src
 
@@ -61,36 +56,35 @@ then run the script.
 ./wingetpkg.ps1
 #+end_src
 
-Some packages are not available with winget, so we're going to use
-=scoop= /a command-line installer for windows/ to install them.
+Some packages are not available with =winget=, so we're going to use =scoop= /a
+command-line installer for windows/ to install them.
 
-Run powershell as normal user and edit =scooppkg.ps1= powershell script
-to include the packages you want to install, then run the script.
+Run =powershell= as normal user and edit =scooppkg.ps1= powershell script to include
+the packages you want to install, then run the script.
 
 #+begin_src powershell
 ./scooppkg.ps1
 #+end_src
 
-* :link: Source file
-Close powershell then open *Windows Terminal*. Set profile to powershell if
-it's not set as default, then save.
-
-Create directory that we need for setting up powershell
+* 🔗 Source file
+Close =powershell= then open *Windows Terminal*. Set profile to /powershell/ if it's
+not set as default, then save. Create the directory that we need for setting up
+powershell.
 
 #+begin_src powershell
 mkdir .config/powershell
-mkdir C:\Users\artjeremie\Documents\powershell
+mkdir c:/Users/artjeremie/Documents/powershell
 #+end_src
 
-Copy =user-profile.ps1= to =C:\Users\artjeremie\.config\powershell\= then
-restart the terminal and add user host.
+Copy =user-profile.ps1= to =c:/Users/artjeremie/.config/powershell/= then restart
+the terminal and add user host.
 
 #+begin_src powershell
 notepad $PROFILE.CurrentUserCurrentHost
 . $env:USERPROFILE\.config\powershell\user_profile.ps1
 #+end_src
 
-* :clapper: Mpv configuration
-I use mpv player as my main video and music player.
-Copy everything inside =portable_config= to
-=C:\Users\artjeremie\scoop\apps\mpv-git\current\portable_config=.
+* 🎬 Mpv configuration
+I use *mpv player* as my main video and music player. Copy everything inside
+/portable_config/ to
+=c:/Users/artjeremie/scoop/apps/mpv-git/current/portable_config=.
