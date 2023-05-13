@@ -1,33 +1,29 @@
 #+title: Windows 10 Tweaks
-#+author: hoaxdream
+#+author: artjeremie
 #+date: [2021-12-15 Wed]
 
 [[https://img.shields.io/github/commit-activity/m/artjeremie/dotwindows.svg?style=social]]
 [[https://img.shields.io/github/followers/artjeremie.svg?style=social]]
 [[https://img.shields.io/github/stars/artjeremie.svg?style=social]]
 
-* Table of Contents                                                  :Toc:Quote:
-:PROPERTIES:
-:Visibility: all
-:END:
-
+* Table of Contents                                                              :Toc:Quote:
 #+BEGIN_QUOTE
 - [[#about][About]]
-- [[#-swap-capslock-to-escape][⌨ Swap capslock to escape]]
+- [[#-make-capslock-as-escape-key][⌨ Make capslock as escape key]]
 - [[#-smartscreen][💡 SmartScreen]]
 - [[#-windowshake][🤝 WindowShake]]
 - [[#-delete-gitbash-context][🔑 Delete Gitbash context]]
 - [[#-control-panel-context][🗝 Control panel context]]
 - [[#-quick-access][💣 Quick access]]
-- [[#-disable-folders][📂 Disable folders]]
+- [[#-disable-folders][📁 Disable folders]]
 - [[#-7zip-context-menu][💼 7zip context menu]]
 - [[#-ssh][🖥 SSH]]
 #+END_QUOTE
 
 * About
-Essential tweaks that i use for windows 10.
+Essential tweaks that i use for Windows 10.
 
-* ⌨ Swap capslock to escape
+* ⌨ Make capslock as escape key
 Navigate =HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout=
 Inside =Keyboard Layout=, create *Binary* value =Scancode Map=.
 
@@ -38,25 +34,28 @@ Inside =Keyboard Layout=, create *Binary* value =Scancode Map=.
 |              | 00 00 00 00             |
 
 * 💡 SmartScreen
-Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System=
-Inside =System=, create *DWORD 32-bit* value with =0= value to disable *SmartScreen*.
+Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System= Inside
+=System=, create *DWORD 32-bit* name =EnableSmartScreen= with =0= value to disable
+*SmartScreen*.
 
 | *Name-Value*        | *Data-Value* |
 |-------------------+------------|
-| EnableSmartScreen | 0          |
+| EnableSmartScreen |          0 |
 
 * 🤝 WindowShake
-Navigate =HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced=
-Inside =Advanced=, create *DWORD 32-bit* value with =1= value to disable *WindowShake*.
+Navigate
+=HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced=
+Inisde =Advance=, create *DWORD 32-bit* name =DisallowShaking= with =1= value to disable
+*WindowShake*.
 
 | *Name-Value*      | *Data-Value* |
 |-----------------+------------|
-| DisallowShaking | 1          |
+| DisallowShaking |          1 |
 
 * 🔑 Delete Gitbash context
 Delete the following registry to remove *Gitbash* in context menu.
 
-#+begin_src shell
+#+begin_src powershell
 HKEY_CLASSES_ROOT\Directory\shell\git_gui
 HKEY_CLASSES_ROOT\Directory\shell\git_shell
 HKEY_CLASSES_ROOT\LibraryFolder\background\shell\git_gui
@@ -66,10 +65,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\git_shell
 #+end_src
 
 * 🗝 Control panel context
-Add *Control Panel* in context menu.
-Navigate =HKEY_CLASSES_ROOT\DesktopBackground\Shell=
-Under =Shell=, create sub *Key* and name it =Control Panel=.
-Inside *Control Panel*, create three =String= value.
+Add *Control Panel* in context menu. Navigate
+=HKEY_CLASSES_ROOT\DesktopBackground\Shell= Under =Shell=, create sub *Key* and name
+it =Control Panel=. Inside *Control Panel*, create three =String= value.
 
 | *Name-Value*  | *Data-Value*                       |
 |-------------+----------------------------------|
@@ -77,8 +75,10 @@ Inside *Control Panel*, create three =String= value.
 | SubCommands | CP-Category;CP-Icons;CP-AllTasks |
 | Icon        | imageres.dll,-27                 |
 
-Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell=
-Under =shell=, create three sub *Key* and change the default *String* value of each *Key*.
+Navigate
+=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell=
+Under =shell=, create three sub *Key* and change the default *String* value of each
+*Key*.
 
 | *Key-Value*   | *Data-Value*    |
 |-------------+---------------|
@@ -95,29 +95,28 @@ Add new *String* value to each of that three sub *Key*.
 Create a sub *Key* to each of the three *Key* above and change all their default
 *String* value.
 
-| *Key-Value*   | *Sub Key* | *Data-Value*                                                  |
+| *Key-Value*   | *Sub-Key* | *Data-Value*                                                  |
 |-------------+---------+-------------------------------------------------------------|
 | CP-Icons    | command | explorer.exe shell:::{21EC2020-3AEA-1069-A2DD-08002B30309D} |
 | CP-Category | command | explorer.exe shell:::{26EE0668-A00A-44D7-9371-BEB064C98683} |
 | CP-AllTasks | command | explorer.exe shell:::{ED7BA470-8E54-465E-825C-99712043E01C} |
 
 * 💣 Quick access
-Disable window explorer sidebar *quick-access*.
-Open *regedit*.
-Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer=
-Inside =Explorer=, create *DWORD 32-bit* value with =1= value to hide *quick-access*.
+Disable window explorer sidebar *quick-access*. Open *regedit* then navigate
+=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer= Inside
+=Explorer=, create *DWORD 32-bit* name =HubMode= with value =1= to hide *quick-access*.
 
 | *Name-Value* | *Data-Value* |
 |------------+------------|
-| HubMode    | 1          |
+| HubMode    |          1 |
 
-* 📂 Disable folders
-Navigate =HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{UNIQUE_ID}\PropertyBag=
-*UNIQUE_ID* equivalent of each folder below.
+* 📁 Disable folders
+Navigate
+=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{UNIQUE_ID}\PropertyBag=
+*UNIQUE_ID* equivalent of each folder below. Create =PropertyBag= *Key* or
+=ThisPCPolicy= *String* if it's missing.
 
-Create =PropertyBag= *Key* or =ThisPCPolicy= *String* if it's missing.
-
-#+begin_src shell
+#+begin_src powershell
 # Documents
 {f42ee2d3-909f-4907-8871-4c22fc0bf756}
 # Pictures
