@@ -9,14 +9,15 @@ $apps = @(
     @{name = "GNU.Emacs" },
     @{name = "qutebrowser.qutebrowser" },
     @{name = "BurntSushi.ripgrep.GNU" },
+    @{name = "sharkdp.fd" },
+    @{name = "junegunn.fzf" },
     @{name = "yt-dlp.yt-dlp" },
     @{name = "ImageMagick.ImageMagick" },
     @{name = "NickeManarin.ScreenToGif" },
     @{name = "OBSProject.OBSStudio" },
     @{name = "qBittorrent.qBittorrent" },
-    @{name = "Telegram.TelegramDesktop" },
     @{name = "Google.Chrome" },
-    @{name = "Dropbox.Dropbox" }
+    @{name = "Neovim.Neovim" },
 );
 Foreach ($app in $apps) {
     $listApp = winget list --exact -q $app.name
