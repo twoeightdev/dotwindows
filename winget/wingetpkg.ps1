@@ -13,11 +13,10 @@ $apps = @(
     @{name = "junegunn.fzf" },
     @{name = "yt-dlp.yt-dlp" },
     @{name = "ImageMagick.ImageMagick" },
-    @{name = "NickeManarin.ScreenToGif" },
     @{name = "OBSProject.OBSStudio" },
     @{name = "qBittorrent.qBittorrent" },
-    @{name = "Google.Chrome" },
-    @{name = "Neovim.Neovim" },
+	@{name = "Notepad++.Notepad++" },
+    @{name = "Mozilla.Firefox" }
 );
 Foreach ($app in $apps) {
     $listApp = winget list --exact -q $app.name
