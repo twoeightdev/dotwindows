@@ -14,7 +14,11 @@ $apps = @(
     @{name = "yt-dlp.yt-dlp" },
     @{name = "ImageMagick.ImageMagick" },
     @{name = "OBSProject.OBSStudio" },
+	@{name = "JetBrains.PyCharm.Community" },
+	@{name = "HearthSim.HearthstoneDeckTracker" },
     @{name = "qBittorrent.qBittorrent" },
+	@{name = "Microsoft.VisualStudioCode" },
+	@{name = "OpenWhisperSystems.Signal" },
 	@{name = "Notepad++.Notepad++" },
     @{name = "Mozilla.Firefox" }
 );
